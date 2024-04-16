@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Input</title>
+  </head>
+  <body>
+    <h1>How old are you?</h1>
+    <script src="generateYears1.js" defer></script>
+    <script>
+      function validateInput(input) {
+        // Check if input is a number and greater than 0
+        if (!isNaN(input) && input > 0) {
+          return true; // Input is a valid positive number
+        } else {
+          return false; // Input is either not a number or not positive
+        }
+      }
+
+      let userInput = prompt("How old are you?");
+
+      if (validateInput(userInput)) {
+        console.log("Valid input:", userInput);
+        generateYears(userInput); // This should now work after the script.js file is loaded
+      } else {
+        console.log("Invalid input. Please enter a positive number.");
+      }
+    </script>
+  </body>
+</html>
